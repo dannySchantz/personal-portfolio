@@ -150,7 +150,7 @@
           </div>
           
         <div class="ml-16 mr-5 relative">
-          <img src="/src/components/IMG_9777.jpeg" class="z-10 w-full h-full rounded-2xl shadow-xl" alt="me">
+          <img src="/static/IMG_9777.jpeg" class="z-10 w-full h-full rounded-2xl shadow-xl" alt="me">
           <div class="absolute top-6 left-6 w-full h-full z-[-1] rounded-2xl shadow-xl"></div>
         </div>
       </div>
