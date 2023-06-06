@@ -3,17 +3,14 @@
 
     import { activePage } from "../components/header.js";
 
-    let headerHeight;
-    let offset = 100;
 
     onMount(() => {
-        headerHeight = document.querySelector('header').offsetHeight;
         updateActivePageOnScroll();
     });
 
     function updateActivePageOnScroll() {
         const sections = document.querySelectorAll('section');
-        const scrollPosition = window.scrollY + headerHeight + offset;
+        const scrollPosition = window.scrollY + headerHeight
 
         sections.forEach((section) => {
             const sectionTop = section.offsetTop;
@@ -27,7 +24,7 @@
 
     function scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
-        const scrollPosition = section.offsetTop - headerHeight - offset;
+        const scrollPosition = section.offsetTop - 20
 
         window.scrollTo({
             top: scrollPosition,
@@ -47,17 +44,24 @@
         left: 0;
         width: 100%;
         height: 4px;
-        @apply bg-primary;
+        @apply bg-gradient-to-r from-primary to-accent;
     }
     .active {
-        @apply text-primary;
+        @apply text-transparent;
+        @apply bg-gradient-to-r from-primary to-accent;
+        background-clip: text;
+    } 
+    .btn:hover {
+        @apply text-transparent;
+        @apply bg-gradient-to-r from-primary to-accent;
+        background-clip: text;
     }
 </style>
 
-<header class="text-center justify-center fixed grid grid-cols-5 w-full font-helvetica backdrop-blur z-10 bg-opacity-60 bg-base-100">
-    <button class="btn-ghost relative btn transition-all duration-700 ease-in-out rounded-none col-span-1 text-xl hover:text-primary {$activePage === 'home' ? 'active' : ''}" on:click={() => scrollToSection('home')}>Home</button>
-    <button class="btn-ghost relative btn transition-all duration-700 ease-in-out rounded-none col-span-1 text-xl hover:text-primary {$activePage === 'about' ? 'active' : ''}" on:click={() => scrollToSection('about')}>About</button>
-    <button class="btn-ghost relative btn transition-all duration-700 ease-in-out rounded-none col-span-1 text-xl hover:text-primary {$activePage === 'education' ? 'active' : ''}" on:click={() => scrollToSection('education')}>Education</button>
-    <button class="btn-ghost relative btn transition-all duration-700 ease-in-out rounded-none col-span-1 text-xl hover:text-primary {$activePage === 'experience' ? 'active' : ''}" on:click={() => scrollToSection('experience')}>Experience</button>
-    <button class="btn-ghost relative btn transition-all duration-700 ease-in-out rounded-none col-span-1 text-xl hover:text-primary {$activePage === 'contact' ? 'active' : ''}" on:click={() => scrollToSection('projects')}>Projects</button>
+<header class="text-center justify-center fixed bg-clip-text grid grid-cols-5 w-full font-helvetica backdrop-blur z-10 bg-opacity-60 bg-base-100">
+    <button class="btn-ghost relative btn transition-all duration-700 ease-in-out rounded-none col-span-1 text-xl {$activePage === 'home' ? 'active' : ''}" on:click={() => scrollToSection('home')}>Home</button>
+    <button class="btn-ghost relative btn transition-all duration-700 ease-in-out rounded-none col-span-1 text-xl {$activePage === 'about' ? 'active' : ''}" on:click={() => scrollToSection('about')}>About</button>
+    <button class="btn-ghost relative btn transition-all duration-700 ease-in-out rounded-none col-span-1 text-xl {$activePage === 'education' ? 'active' : ''}" on:click={() => scrollToSection('education')}>Education</button>
+    <button class="btn-ghost relative btn transition-all duration-700 ease-in-out rounded-none col-span-1 text-xl {$activePage === 'experience' ? 'active' : ''}" on:click={() => scrollToSection('experience')}>Experience</button>
+    <button class="btn-ghost relative btn transition-all duration-700 ease-in-out rounded-none col-span-1 text-xl {$activePage === 'projects' ? 'active' : ''}" on:click={() => scrollToSection('projects')}>Projects</button>
 </header>

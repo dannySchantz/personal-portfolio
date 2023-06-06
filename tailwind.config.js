@@ -6,16 +6,36 @@ module.exports = {
       fontFamily: {
         helvetica: ['Helvetica', 'Arial', 'sans-serif'],
       },
-      backgroundColor: {
-        black: '#000000', // Replace with your desired black color value
-      },
     },
   },
   plugins: [require("daisyui"), require('@tailwindcss/typography')],
   
   daisyui: {
-    themes: ["forest", "retro"],
-    darkTheme: "forest",
+    themes: [
+      {
+        mytheme: {
+                
+        "primary": "#1eb854",
+                
+        "secondary": "#1db990",
+                
+        "accent": "#1db9ac",
+                
+        "neutral": "#18342b",
+                
+        "base-100": "#000000",
+                
+        "info": "#3abff8",
+                
+        "success": "#36d399",
+                
+        "warning": "#fbbd23",
+                
+        "error": "#f87272",
+        },
+      },
+    ],
+    darkTheme: "mytheme",
   },
 };
 
