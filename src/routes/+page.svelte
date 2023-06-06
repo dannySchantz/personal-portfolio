@@ -150,7 +150,7 @@
           </div>
           
         <div class="ml-16 mr-5 relative">
-          <img src="/static/IMG_9777.jpeg" class="z-10 w-full h-full rounded-2xl shadow-xl" alt="me">
+          <img src={"/static/IMG_9777.jpeg"} class="z-10 w-full h-full rounded-2xl shadow-xl" alt="me">
           <div class="absolute top-6 left-6 w-full h-full z-[-1] rounded-2xl shadow-xl"></div>
         </div>
       </div>
@@ -247,7 +247,7 @@
           </div>
           <div class="mt-20 snap-always snap-center first:pl-8 last:pr-8">
             <div class="w-96 h-96 rounded-lg box topBox flex justify-center">
-                    <img src="/src/components/SCS_BIG.D.png" class ="w-1/3 h-1/5 p-5 rounded-lg" alt="steelcase logo">
+                    <img src={"/static/SCS_BIG.D.png"} class ="w-1/3 h-1/5 p-5 rounded-lg" alt="steelcase logo">
                 <div></div>
             </div>
           </div>
